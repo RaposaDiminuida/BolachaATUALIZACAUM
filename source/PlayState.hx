@@ -1613,7 +1613,6 @@ class PlayState extends MusicBeatState
 			return;
 		}
 
-		var video:VideoSprite = new VideoSprite();
 		video.playVideo(filepath);
 		video.finishCallback = function()
 		{
