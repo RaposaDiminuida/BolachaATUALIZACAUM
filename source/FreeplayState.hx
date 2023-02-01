@@ -49,10 +49,6 @@ class FreeplayState extends MusicBeatState
 	var bg:FlxSprite;
 	var coisapraficarbonito:FlxSprite;
 	var mesa:FlxSprite;
-	var bolacha:FlxSprite;
-	var tomer:FlxSprite;
-	var jooj:FlxSprite;
-	var brasonic:FlxSprite;
 	var intendedColor:Int;
 	var colorTween:FlxTween;
 
@@ -97,7 +93,6 @@ class FreeplayState extends MusicBeatState
 		WeekData.loadTheFirstEnabledMod();
 
 		/*		//KIND OF BROKEN NOW AND ALSO PRETTY USELESS//
-
 		var initSonglist = CoolUtil.coolTextFile(Paths.txt('freeplaySonglist'));
 		for (i in 0...initSonglist.length)
 		{
@@ -116,30 +111,6 @@ class FreeplayState extends MusicBeatState
 		mesa.antialiasing = ClientPrefs.globalAntialiasing;
 		add(mesa);
 		mesa.screenCenter();
-
-		bolacha = new FlxSprite().loadGraphic(Paths.image('portraitbolacha'));
-		bolacha.antialiasing = ClientPrefs.globalAntialiasing;
-		add(bolacha);
-		bolacha.screenCenter();
-		bolacha.alpha = 0.0;
-
-		tomer = new FlxSprite().loadGraphic(Paths.image('portraittomer'));
-		tomer.antialiasing = ClientPrefs.globalAntialiasing;
-		add(tomer);
-		tomer.screenCenter();
-		tomer.alpha = 0.0;
-
-		jooj = new FlxSprite().loadGraphic(Paths.image('portraitjooj'));
-		jooj.antialiasing = ClientPrefs.globalAntialiasing;
-		add(jooj);
-		jooj.screenCenter();
-		jooj.alpha = 0.0;
-
-		brasonic = new FlxSprite().loadGraphic(Paths.image('portraitbrasonic'));
-		brasonic.antialiasing = ClientPrefs.globalAntialiasing;
-		add(brasonic);
-		brasonic.screenCenter();
-		brasonic.alpha = 0.0;
 
 		coisapraficarbonito = new FlxSprite().loadGraphic(Paths.image('menufront'));
 		coisapraficarbonito.antialiasing = ClientPrefs.globalAntialiasing;
@@ -208,17 +179,13 @@ class FreeplayState extends MusicBeatState
 		// JUST DOIN THIS SHIT FOR TESTING!!!
 		/* 
 			var md:String = Markdown.markdownToHtml(Assets.getText('CHANGELOG.md'));
-
 			var texFel:TextField = new TextField();
 			texFel.width = FlxG.width;
 			texFel.height = FlxG.height;
 			// texFel.
 			texFel.htmlText = md;
-
 			FlxG.stage.addChild(texFel);
-
 			// scoreText.textField.htmlText = md;
-
 			trace(md);
 		 */
 
@@ -260,13 +227,11 @@ class FreeplayState extends MusicBeatState
 	{
 		if (songCharacters == null)
 			songCharacters = ['bf'];
-
 		var num:Int = 0;
 		for (song in songs)
 		{
 			addSong(song, weekNum, songCharacters[num]);
 			this.songs[this.songs.length-1].color = weekColor;
-
 			if (songCharacters.length != 1)
 				num++;
 		}
@@ -572,42 +537,7 @@ class FreeplayState extends MusicBeatState
 		diffText.x = Std.int(scoreBG.x + (scoreBG.width / 2));
 		diffText.x -= diffText.width / 2;
 	}
-	}
-
-		switch(songs[curSelected].week) 
-		{
-			case 0:  //breaking
-			{	
-				bolacha.alpha = 1.0;
-				tomer.alpha = 0.0;
-				jooj.alpha = 0.0;
-				brasonic.alpha = 0.0;
-			}
-			case 2:  //tomer
-			{
-				bolacha.alpha = 0.0;
-				tomer.alpha = 1.0;
-				jooj.alpha = 0.0;
-				brasonic.alpha = 0.0;
-			}
-			case 3: //jooj
-			{
-				bolacha.alpha = 0.0;
-				tomer.alpha = 0.0;
-				jooj.alpha = 1.0;
-				brasonic.alpha = 0.0;
-			}
-			case 4: //brasonic
-			{
-				bolacha.alpha = 0.0;
-				tomer.alpha = 0.0;
-				jooj.alpha = 0.0;
-				brasonic.alpha = 1.0;
-			}
-		}
-	}
-	}
-
+}
 
 class SongMetadata
 {
