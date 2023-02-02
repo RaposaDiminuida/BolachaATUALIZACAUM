@@ -49,6 +49,9 @@ jobs:
           haxelib git hscript-ex https://github.com/ianharrigan/hscript-ex
           haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc
           haxelib install hxcpp-debug-server
+          haxelib install refactor
+          haxelib run refactor replace source *.hx "/vlc.MP4Handler;/VideoHandler;\nimport VideoSprite;/"
+          haxelib run refactor replace source *.hx "/MP4Handler/VideoSprite/"
           haxelib remove flixel
           haxelib install flixel 4.11.0
           haxelib remove flixel-addons
