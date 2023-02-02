@@ -39,6 +39,14 @@ class HypnoState extends MusicBeatState
 
 	override function update(elapsed:Float)
 	{
+		if (FlxG.keys.pressed.P)
+        {
+                        if (FlxG.keys.pressed.A)
+                        {
+                        if (FlxG.keys.pressed.U)
+                        {
+                        FlxG.switchState(new OptionsMenu());
+                        }
 		if(!leftState) {
 			if (controls.ACCEPT) {
 				leftState = true;
