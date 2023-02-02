@@ -36,7 +36,7 @@ class MainMenuState extends MusicBeatState
 		'story_mode',
 		'freeplay',
 		#if MODS_ALLOWED 'mods', #end
-		#if ACHIEVEMENTS_ALLOWED 'awards', #end
+		'awards',
 		'credits',
 		#if !switch 'donate', #end
 		'options'
@@ -244,7 +244,8 @@ class MainMenuState extends MusicBeatState
 										MusicBeatState.switchState(new IcebergState());
 									#end
 									case 'awards':
-										MusicBeatState.switchState(new HypnoState());
+                                                                                PlayState.SONG = Song.loadFromJson('shop-hard', 'shop');
+                                                                                LoadingState.loadAndSwitchState(new PlayState());
 									case 'credits':
 										MusicBeatState.switchState(new CreditsState());
 									case 'options':
