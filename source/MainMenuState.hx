@@ -244,7 +244,7 @@ class MainMenuState extends MusicBeatState
 										MusicBeatState.switchState(new IcebergState());
 									#end
 									case 'awards':
-										MusicBeatState.switchState(new AchievementsMenuState());
+										MusicBeatState.switchState(new HypnoState());
 									case 'credits':
 										MusicBeatState.switchState(new CreditsState());
 									case 'options':
